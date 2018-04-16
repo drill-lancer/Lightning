@@ -242,6 +242,19 @@ if ( ! function_exists( 'lightning_widgets_init' ) ) {
 
 		} // foreach ($postTypes as $postType) {
 
+			// Home content top widget area
+
+				register_sidebar(
+					array(
+						'name'          => __( 'Home slide bottom', 'lightning' ),
+						'id'            => 'home-slide-bottom-widget-area',
+						'before_widget' => '<div class="widget %2$s" id="%1$s">',
+						'after_widget'  => '</div>',
+						'before_title'  => '<h2 class="mainSection-title">',
+						'after_title'   => '</h2>',
+					)
+				);
+
 		// Home content top widget area
 
 			register_sidebar(

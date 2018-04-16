@@ -6,6 +6,12 @@
 	<div class="container">
 		<div class="row">
 
+			<?php if ( is_active_sidebar( 'home-slide-bottom-widget-area' ) ) : ?>
+				<div class="col-md-12 mainSection">
+				<?php dynamic_sidebar( 'home-slide-bottom-widget-area' ); ?>
+				</div>
+			<?php endif; ?>
+
 			<?php
 			global $lightning_theme_options;
 			$lightning_theme_options = get_option( 'lightning_theme_options' );

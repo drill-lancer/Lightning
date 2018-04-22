@@ -242,12 +242,13 @@ if ( ! function_exists( 'lightning_widgets_init' ) ) {
 
 		} // foreach ($postTypes as $postType) {
 
-			// Home content top widget area
+			// Home slide bottom widget area
 
 				register_sidebar(
 					array(
 						'name'          => __( 'Home slide bottom', 'lightning' ),
-						'id'            => 'home-slide-bottom-widget-area',
+						'id'            => 'home-top-widget-area',
+						'description'   => __( 'This widget area appears on the home slide bottom.', 'lightning' ),
 						'before_widget' => '<div class="widget %2$s" id="%1$s">',
 						'after_widget'  => '</div>',
 						'before_title'  => '<h2 class="mainSection-title">',

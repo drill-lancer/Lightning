@@ -6,9 +6,9 @@
 	<div class="container">
 		<div class="row">
 
-			<?php if ( is_active_sidebar( 'home-slide-bottom-widget-area' ) ) : ?>
+			<?php if ( is_active_sidebar( 'home-top-widget-area' ) ) : ?>
 				<div class="col-md-12 mainSection">
-				<?php dynamic_sidebar( 'home-slide-bottom-widget-area' ); ?>
+				<?php dynamic_sidebar( 'home-top-widget-area' ); ?>
 				</div>
 			<?php endif; ?>
 

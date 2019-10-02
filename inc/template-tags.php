@@ -86,6 +86,26 @@ function lightning_get_post_class( $class = '', $post_id = null ) {
 	return 'class="' . join( ' ', get_post_class( $class, $post_id ) ) . '"';
 }
 
+
+function lightning_get_template_part( $slug, $name = null ) {
+
+	$templates = array();
+	$name      = (string) $name;
+
+	preg_match( '/(.*\/)(.*)/', $slug, $matches );
+	$single_slug = end( $matches );
+	$templates[] = "{$single_slug}.php";
+
+	if ( '' !== $name ) {
+		$templates[] = "{$slug}-{$name}.php";
+	}
+
+	$templates[] = "{$slug}.php";
+
+	locate_template( $templates, true, false );
+
+}
+
 /*-------------------------------------------*/
 /*	Sanitize
 /*-------------------------------------------*/

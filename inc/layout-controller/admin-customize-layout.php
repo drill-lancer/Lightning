@@ -91,6 +91,28 @@ function lightning_customize_register_layout( $wp_customize ) {
 	}
 
 	$wp_customize->add_setting(
+		'lightning_theme_options[slim_width][singular]',
+		array(
+			'default'           => false,
+			'type'              => 'option',
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'lightning_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control(
+		'lightning_theme_options[slim_width][singular]',
+		array(
+			'label'       => __( 'Set to slim content width when one column is selected in singular page.', 'lightning' ),
+			'section'     => 'lightning_layout',
+			'settings'    => 'lightning_theme_options[slim_width][singular]',
+			'type'        => 'checkbox',
+		)
+	);
+
+	/*
+	customize_register
+	/*-------------------------------------------*/
+	$wp_customize->add_setting(
 		'ltg_sidebar_setting',
 		array(
 			'sanitize_callback' => 'sanitize_text_field',

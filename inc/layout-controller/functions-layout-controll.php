@@ -88,9 +88,22 @@ function lightning_is_layout_onecolumn() {
 	return apply_filters( 'lightning_is_layout_onecolumn', $onecolumn );
 }
 
-	/*
-	lightning_is_subsection_display
-	/*-------------------------------------------*/
+function lightning_is_slim_width() {
+	$return = false;
+	if ( is_singular() ){
+		if ( lightning_is_layout_onecolumn() ){
+			$options = get_option( 'lightning_theme_options' );
+			if ( ! empty( $options['slim_width']['singular'] ) ){
+				$return = true;
+			}
+		}
+	}
+	return apply_filters( 'lightning_is_layout_onecolumn', $return );
+}
+
+/*
+lightning_is_subsection_display
+/*-------------------------------------------*/
 function lightning_is_subsection_display() {
 	$return  = true;
 	$options = get_option( 'lightning_theme_options' );
@@ -164,3 +177,4 @@ function lightning_is_siteContent_padding_off() {
 		}
 	}
 }
+

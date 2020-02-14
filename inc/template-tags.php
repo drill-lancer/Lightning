@@ -64,6 +64,10 @@ function lightning_get_the_class_name( $position = '' ) {
 			$class_names['siteContent'] .= ' siteContent-paddingVertical-off';
 			$class_names['mainSection'] .= ' mainSection-marginVertical-off';
 		}
+		if ( lightning_is_slim_width() ) {
+			$class_names['mainSection'] .= ' mainSection-width-slim';
+			$class_names['sideSection'] .= ' subSection-width-slim';
+		}
 	}
 
 	if ( empty( $class_names[ $position ] ) ) {

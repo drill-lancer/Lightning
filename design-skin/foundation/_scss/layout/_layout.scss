@@ -87,9 +87,17 @@ Original file path is themes/lightning/design-skin/foundation/ that, please modi
 	}
 
 	// one-column
-	.mainSection-col-one,
-	.sideSection-col-one {
+	.mainSection-col-one:not(.mainSection-width-slim),
+	.sideSection-col-one:not(.subSection-width-slim) {
 		width: 100%;
+	}
+	.mainSection-width-slim,
+	.subSection-width-slim {
+		@media (min-width: $lg-min) {
+			width: $lg-container;
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
 }
 
